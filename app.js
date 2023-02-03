@@ -3,18 +3,25 @@ let vm = Vue.createApp({
     return {
       people: [
         {
-          name: 'John',
-          message: 'Hello world!'
+          name: "John",
+          message: "Hello world!",
+          age: "",
         },
         {
-          name: 'Rick',
-          message: 'I like pie.'
+          name: "Rick",
+          message: "I like pie.",
         },
         {
-          name: 'Amy',
-          message: 'Skydiving is fun!'
-        }
-      ]
-    }
-  }
-}).mount('#app')
+          name: "Amy",
+          message: "Skydiving is fun!",
+        },
+      ],
+    };
+  },
+  methods: {
+    moveToBottom() {
+      const element = this.people.shift();
+      this.people.push(element);
+    },
+  },
+}).mount("#app");
